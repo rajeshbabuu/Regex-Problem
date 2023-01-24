@@ -42,5 +42,22 @@ namespace RegexPattern
                 LastName();
             }
         }
-    }
+
+        public void Email()
+        {
+            Console.Write("\nEnter Email (Example: abc.xyz@bl.co.in): ");
+            string email = Console.ReadLine();
+            var regex = new Regex(@"^([a][b][c])([_\.\+\-])([a-zA-Z0-9]+)\@([b][l])\.([c][o])\.([a-z]{2})*$");
+            bool matchRes = regex.IsMatch(email);
+            if (matchRes == true)
+            {
+                Console.WriteLine($"{email} is valid");
+            }
+            else
+            {
+                Console.WriteLine($"{email} is invalid. Please enter a valid email as abc.xyz@bl.co.in where xyz and in are optional");
+                Email();
+            }
         }
+    }
+}
