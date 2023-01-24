@@ -76,5 +76,22 @@ namespace RegexPattern
                 PhoneNumber();
             }
         }
+
+        public void Password()
+        {
+            Console.Write("\nEnter a Password: ");
+            string password = Console.ReadLine();
+            var regex = new Regex(@"^[A-Za-z]{1}[A-Za-z0-9]{7,}");
+            bool matchRes = regex.IsMatch(password);
+            if (matchRes == true)
+            {
+                Console.WriteLine($"{password} is valid");
+            }
+            else
+            {
+                Console.WriteLine($"{password} is invalid. Please enter a valid password. Must contain atleast 8 characters.");
+                Password();
+            }
+        }
     }
 }
