@@ -59,5 +59,22 @@ namespace RegexPattern
                 Email();
             }
         }
+
+        public void PhoneNumber()
+        {
+            Console.Write("\nEnter Mobile Number (Example: +(country code) (10 digit number)): ");
+            string phoneNumber = Console.ReadLine();
+            var regex = new Regex(@"^\+[1-9]{1}[0-9]{0,2}\s[1-9]{1}[0-9]{9}");
+            bool matchRes = regex.IsMatch(phoneNumber);
+            if (matchRes == true)
+            {
+                Console.WriteLine($"{phoneNumber} is valid");
+            }
+            else
+            {
+                Console.WriteLine($"{phoneNumber} is invalid. Please enter a valid mobile number");
+                PhoneNumber();
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@
             obj.FirstName();
             obj.LastName();
             obj.Email();
+            obj.PhoneNumber();
         }
     }
 }
