@@ -9,6 +9,7 @@
 
             UserRegistration obj = new UserRegistration();
             obj.FirstName();
+            obj.LastName();
         }
     }
 }
