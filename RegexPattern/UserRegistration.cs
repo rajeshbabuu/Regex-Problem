@@ -47,7 +47,7 @@ namespace RegexPattern
         {
             Console.Write("\nEnter Email (Example: abc.xyz@bl.co.in): ");
             string email = Console.ReadLine();
-            var regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\D\W).\S{8,15}$");
+            var regex = new Regex(@"^(\w)([_\+\-\.]{0,1}[\w])*[@][a-z0-9]{1,} *[.][a-z]{2,}[\.]{0,}[a-z]{0,}$");
             bool matchRes = regex.IsMatch(email);
             if (matchRes == true)
             {
